@@ -1,0 +1,45 @@
+#checkout-summary {
+	margin-top: 20px;
+	color: #666;
+	font-size: 16px;
+}
+#checkout-summary div {
+	margin-bottom: 20px;
+}
+.summary-ammount {
+	color: #000;
+}
+#checkout-summary strong {
+	color: #000;
+}
+#checkout-summary span {
+	float: right;
+	font-size: 16px;
+}
+#summary-total {
+	margin-top: 30px;
+}
+#summary-total strong,
+#summary-total span {
+	font-weight: 900;
+	color: #31b8c6;
+	font-size: 22px;
+}
+.summary-details {
+	margin-top: 5px;
+	margin-left: 5px;
+}
+#bookingButton {
+	width: 100%;
+	padding: 12px;
+	font-size: 16px;
+	font-weight: 700;
+	border-radius: 6px;
+	background-color: #31b8c6;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+#bookingButton:hover {
+	background-color: #f28f52;
+}
