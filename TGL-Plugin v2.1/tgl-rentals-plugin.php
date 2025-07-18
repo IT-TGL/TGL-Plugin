@@ -46,3 +46,10 @@ function register_elementor_widget( $widgets_manager ) {
 }
 
 add_action( 'elementor/widgets/register', 'register_elementor_widget' );
+
+// Filtro para activar la opcion Checkout only de Jetbookings si tenemos activo el precio Per Day
+add_filter( 'jet-booking/assets/config', function( $config ) {
+    $config['checkout_only'] = true;
+
+    return $config;
+} );
