@@ -7,12 +7,8 @@ class Property_Discount_Price {
         add_action( 'wp_enqueue_scripts', [$this, 'enqueue_styles'] );
     }
 
-    // Define el método enqueue_styles para evitar el error fatal.
-    // Puedes encolar un archivo CSS específico para este shortcode si lo necesitas.
+    // Definimos el método enqueue_styles para evitar un error fatal.
     public function enqueue_styles() {
-        // Ejemplo: Si este shortcode necesita un CSS, podrías añadir algo como esto:
-        // wp_enqueue_style( 'property-discount-price', plugin_dir_url( __FILE__ ) . '../assets/css/property-discount-price.css' );
-        // Si no necesitas estilos específicos, puedes dejar este método vacío o eliminar la línea del add_action en el constructor.
     }
 
     public function get_default_price() {
@@ -20,10 +16,7 @@ class Property_Discount_Price {
       return !empty($prices['_apartment_price']) ? json_encode($prices['_apartment_price']) : false;
     }
 
-    /**
-     * Método para mostrar solo el precio con descuento.
-     * Utiliza el precio base del apartamento y el porcentaje de descuento.
-     */
+    
     public function display_discounted_price() {
         $post_id = get_the_ID(); // Obtiene el ID del post/apartamento actual
 
@@ -45,7 +38,6 @@ class Property_Discount_Price {
         $discounted_price = $original_price * (1 - ($discount_percentage / 100));
 
         // Formatear y devolver solo el precio con descuento
-        // Se usa number_format para asegurar el formato de moneda sin decimales como en tu imagen
-        return '<span style="font-weight: bold; color: #F28F52; font-size: 1.2em;">$' . number_format($discounted_price, 0, ',', '.') . '</span><span> /night</span>';
+        return '<span style="font-weight: bold; color: #F28F52; font-size: 1.2em;">$' . $discounted_price . '</span><span> /night</span>';
     }
 }
