@@ -37,7 +37,7 @@ class Booking_Form_Price_Calculator {
     $cleaningFee = get_post_meta(get_the_ID(), 'cleaning_fee', true);
     $cleaningFee = $cleaningFee ? floatval($cleaningFee) : 0;
     $propertyID = get_post_meta(get_the_ID(), 'property-id', true);
-    $typeOfBooking = get_post_meta(get_the_ID(), 'type-of-booking', true);
+    $typeOfBooking = get_post_meta(get_the_ID(), 'instant_confirmation', true);
     $damageProtection = get_post_meta(get_the_ID(), 'damage_protection_fee', true);
 
 
@@ -88,7 +88,7 @@ class Booking_Form_Price_Calculator {
             if( siteMode === 'rentals' ) {
 
                 let bookingButtonHtml = `<button id="bookingButton" href=${bookingURL} class="jet-form-builder__action-button submit-type-reload">
-                                        ${typeOfBooking === 'Booking Request' ? 'Request to Book' : 'Book Now'}
+                                        ${typeOfBooking === 'Instant Confirmation' ? 'Book Now' : 'Request to Book'}
                                     </button>`;
                                 
                 bookingButtonContainer.insertAdjacentHTML('afterbegin', bookingButtonHtml);
@@ -209,3 +209,4 @@ class Booking_Form_Price_Calculator {
    }
 
 }
+
